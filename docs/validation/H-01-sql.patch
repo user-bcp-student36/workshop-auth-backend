@@ -1,0 +1,60 @@
+diff --git a/src/main/java/com/bcp/workshop/auth/LegacyDatabase.java b/src/main/java/com/bcp/workshop/auth/LegacyDatabase.java
+index 747ca6d..72858fe 100644
+--- a/src/main/java/com/bcp/workshop/auth/LegacyDatabase.java
++++ b/src/main/java/com/bcp/workshop/auth/LegacyDatabase.java
+@@ -9,6 +9,7 @@ import java.sql.Connection;
+ import java.sql.DriverManager;
+ import java.sql.ResultSet;
+ import java.sql.Statement;
++import java.sql.PreparedStatement;
+ 
+ @ApplicationScoped
+ public class LegacyDatabase {
+@@ -20,8 +21,8 @@ public class LegacyDatabase {
+             Files.createDirectories(Path.of("data"));
+             try (Connection connection = DriverManager.getConnection(DB_URL); Statement statement = connection.createStatement()) {
+                 statement.executeUpdate("CREATE TABLE IF NOT EXISTS legacy_users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT NOT NULL, display_name TEXT NOT NULL, role TEXT NOT NULL)");
+-                statement.executeUpdate("INSERT OR IGNORE INTO legacy_users(username,password,display_name,role) VALUES ('student','Workshop123!','Workshop Student','STUDENT')");
+-                statement.executeUpdate("INSERT OR IGNORE INTO legacy_users(username,password,display_name,role) VALUES ('trainer','Trainer123!','Workshop Trainer','TRAINER')");
++                insertSeed(connection, "student", "Workshop123!", "Workshop Student", "STUDENT");
++                insertSeed(connection, "trainer", "Trainer123!", "Workshop Trainer", "TRAINER");
+             }
+         } catch (Exception error) {
+             error.printStackTrace();
+@@ -29,16 +30,31 @@ public class LegacyDatabase {
+     }
+ 
+     public UserRecord findByCredentials(String username, String password) {
+-        String sql = "SELECT id, username, display_name, role FROM legacy_users WHERE username='" + username + "' AND password='" + password + "'";
++        String sql = "SELECT id, username, display_name, role FROM legacy_users WHERE username=? AND password=?";
+         try (Connection connection = DriverManager.getConnection(DB_URL);
+-             Statement statement = connection.createStatement();
+-             ResultSet result = statement.executeQuery(sql)) {
+-            if (result.next()) {
+-                return new UserRecord(result.getLong("id"), result.getString("username"), result.getString("display_name"), result.getString("role"));
++             PreparedStatement statement = connection.prepareStatement(sql)) {
++            statement.setString(1, username);
++            statement.setString(2, password);
++            try (ResultSet result = statement.executeQuery()) {
++                if (result.next()) {
++                    return new UserRecord(result.getLong("id"), result.getString("username"), result.getString("display_name"), result.getString("role"));
++                }
+             }
+         } catch (Exception error) {
+             error.printStackTrace();
+         }
+         return null;
+     }
++
++    private void insertSeed(Connection connection, String username, String password,
++                            String displayName, String role) throws java.sql.SQLException {
++        try (PreparedStatement statement = connection.prepareStatement(
++                "INSERT OR IGNORE INTO legacy_users(username,password,display_name,role) VALUES (?,?,?,?)")) {
++            statement.setString(1, username);
++            statement.setString(2, password);
++            statement.setString(3, displayName);
++            statement.setString(4, role);
++            statement.executeUpdate();
++        }
++    }
+ }

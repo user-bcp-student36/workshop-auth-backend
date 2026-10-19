@@ -1,0 +1,8 @@
+missing-secret: PASS (explicit failure, exit=1)
+invalid-base64-secret: PASS (explicit failure, exit=1)
+short-secret: PASS (explicit failure, exit=1)
+missing-cors: PASS (explicit failure, exit=1)
+wildcard-cors: PASS (explicit failure, exit=1)
+missing-seed: PASS (explicit failure, exit=1)
+configured-startup: PASS (loopback readiness, health UP, login 200 and signed token)
+configured-invalid-login: PASS (401 with generic message only)

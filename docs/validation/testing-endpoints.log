@@ -1,0 +1,127 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24142 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] 
+[INFO] ---------------< com.bcp.workshop:workshop-auth-backend >---------------
+[INFO] Building workshop-auth-backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ workshop-auth-backend ---
+[INFO] argLine set to -javaagent:C:\\Users\\Usuario\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\Usuario\\Documents\\T60018-andres-koga\\reqflow-workspace\\workshop-auth-backend\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ workshop-auth-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.16.0:compile (default-compile) @ workshop-auth-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ workshop-auth-backend ---
+[INFO] skip non existing resourceDirectory C:\Users\Usuario\Documents\T60018-andres-koga\reqflow-workspace\workshop-auth-backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.16.0:testCompile (default-testCompile) @ workshop-auth-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug release 21] to target\test-classes
+[INFO] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/CorsTest.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/CorsTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ workshop-auth-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.bcp.workshop.auth.AuthFailureHttpTest
+2026-10-19 16:40:47,361 INFO  [io.quarkus] (main) workshop-auth-backend 0.1.0 on JVM (powered by Quarkus 3.27.6) started in 13.532s. Listening on: http://127.0.0.1:56662
+2026-10-19 16:40:47,365 INFO  [io.quarkus] (main) Profile test activated. 
+2026-10-19 16:40:47,365 INFO  [io.quarkus] (main) Installed features: [cdi, rest, rest-jackson, smallrye-context-propagation, smallrye-health, vertx]
+2026-10-19 16:40:49,956 ERROR [com.bcp.wor.aut.AuthResource] (executor-thread-1) Unexpected authentication failure: java.lang.IllegalStateException: synthetic authentication failure
+	at com.bcp.workshop.auth.AuthFailureHttpTest$FailingAuthService.authenticate(AuthFailureHttpTest.java:66)
+	at com.bcp.workshop.auth.AuthFailureHttpTest_FailingAuthService_ClientProxy.authenticate(Unknown Source)
+	at com.bcp.workshop.auth.AuthResource.login(AuthResource.java:36)
+	at com.bcp.workshop.auth.AuthResource$quarkusrestinvoker$login_e116be5bde706d574eb873f3003e2be65b817261.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:190)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:645)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-10-19 16:40:50,395 ERROR [com.bcp.wor.aut.AuthResource] (executor-thread-1) Authentication persistence failure: com.bcp.workshop.auth.PersistenceFailure: synthetic query failure
+	at com.bcp.workshop.auth.AuthFailureHttpTest$FailingAuthService.authenticate(AuthFailureHttpTest.java:63)
+	at com.bcp.workshop.auth.AuthFailureHttpTest_FailingAuthService_ClientProxy.authenticate(Unknown Source)
+	at com.bcp.workshop.auth.AuthResource.login(AuthResource.java:36)
+	at com.bcp.workshop.auth.AuthResource$quarkusrestinvoker$login_e116be5bde706d574eb873f3003e2be65b817261.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:190)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:645)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-10-19 16:40:50,459 ERROR [com.bcp.wor.aut.AuthResource] (executor-thread-1) Unexpected authentication failure: java.lang.IllegalStateException: synthetic token issuance failure
+	at com.bcp.workshop.auth.AuthFailureHttpTest$FailingAuthService.issueToken(AuthFailureHttpTest.java:72)
+	at com.bcp.workshop.auth.AuthFailureHttpTest_FailingAuthService_ClientProxy.issueToken(Unknown Source)
+	at com.bcp.workshop.auth.AuthResource.success(AuthResource.java:70)
+	at com.bcp.workshop.auth.AuthResource.login(AuthResource.java:40)
+	at com.bcp.workshop.auth.AuthResource$quarkusrestinvoker$login_e116be5bde706d574eb873f3003e2be65b817261.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:190)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:645)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.945 s -- in com.bcp.workshop.auth.AuthFailureHttpTest
+[INFO] Running com.bcp.workshop.auth.HealthDownHttpTest
+2026-10-19 16:40:50,616 INFO  [io.quarkus] (main) workshop-auth-backend stopped in 0.111s
+2026-10-19 16:40:52,185 INFO  [io.quarkus] (main) workshop-auth-backend 0.1.0 on JVM (powered by Quarkus 3.27.6) started in 0.900s. Listening on: http://127.0.0.1:56667
+2026-10-19 16:40:52,185 INFO  [io.quarkus] (main) Profile test activated. 
+2026-10-19 16:40:52,185 INFO  [io.quarkus] (main) Installed features: [cdi, rest, rest-jackson, smallrye-context-propagation, smallrye-health, vertx]
+2026-10-19 16:40:53,281 INFO  [io.sma.health] (vert.x-eventloop-thread-1) SRHCK01001: Reporting health down status: {"status":"DOWN","checks":[]}
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.964 s -- in com.bcp.workshop.auth.HealthDownHttpTest
+[INFO] Running com.bcp.workshop.auth.AuthCharacterizationTest
+2026-10-19 16:40:53,531 INFO  [io.quarkus] (main) workshop-auth-backend stopped in 0.046s
+2026-10-19 16:40:54,563 INFO  [io.quarkus] (main) workshop-auth-backend 0.1.0 on JVM (powered by Quarkus 3.27.6) started in 0.713s. Listening on: http://127.0.0.1:56669
+2026-10-19 16:40:54,563 INFO  [io.quarkus] (main) Profile test activated. 
+2026-10-19 16:40:54,563 INFO  [io.quarkus] (main) Installed features: [cdi, rest, rest-jackson, smallrye-context-propagation, smallrye-health, vertx]
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.696 s -- in com.bcp.workshop.auth.AuthCharacterizationTest
+[INFO] Running com.bcp.workshop.auth.AuthResourceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s -- in com.bcp.workshop.auth.AuthResourceTest
+[INFO] Running com.bcp.workshop.auth.CorsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 s -- in com.bcp.workshop.auth.CorsTest
+[INFO] Running com.bcp.workshop.auth.HealthResourceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s -- in com.bcp.workshop.auth.HealthResourceTest
+[INFO] Running com.bcp.workshop.auth.LoginProtocolTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in com.bcp.workshop.auth.LoginProtocolTest
+2026-10-19 16:40:58,738 INFO  [io.quarkus] (main) workshop-auth-backend stopped in 0.028s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  34.965 s
+[INFO] Finished at: 2026-10-19T16:40:58-05:00
+[INFO] ------------------------------------------------------------------------

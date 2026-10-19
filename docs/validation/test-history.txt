@@ -1,0 +1,78 @@
+=== characterization-before.log ===
+[ERROR] Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.188 s <<< FAILURE! -- in com.bcp.workshop.auth.AuthCharacterizationTest
+Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s -- in com.bcp.workshop.auth.AuthResourceTest
+[ERROR]   AuthCharacterizationTest.malformedJsonUsesDocumentedErrorBody:74 � IllegalState Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+[ERROR] Tests run: 8, Failures: 0, Errors: 1, Skipped: 0
+[ERROR] BUILD FAILURE
+=== correction-before.log ===
+[ERROR] Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 7.065 s <<< FAILURE! -- in com.bcp.workshop.auth.AuthCorrectionTest
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+Expected status code <401> but was <200>.
+org.opentest4j.AssertionFailedError: expected: <null> but was: <https://unapproved.example>
+org.opentest4j.AssertionFailedError: expected: <3> but was: <1>
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in com.bcp.workshop.auth.ErrorHandlingTest
+[ERROR]   AuthCorrectionTest.activeSchemaContainsOnlyPasswordHashes:31 expected: <true> but was: <false>
+Expected status code <401> but was <200>.
+[ERROR]   AuthCorrectionTest.tokenUsesSignedCompactFormat:42 expected: <3> but was: <1>
+[ERROR]   AuthCorrectionTest.unapprovedOriginReceivesNoCorsAuthorization:50 expected: <null> but was: <https://unapproved.example>
+[ERROR] Tests run: 6, Failures: 4, Errors: 0, Skipped: 0
+[ERROR] BUILD FAILURE
+=== internal-before.log ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.837 s -- in com.bcp.workshop.auth.PersistenceCharacterizationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.bcp.workshop.auth.TokenCharacterizationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+=== h01-after.log ===
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.059 s -- in com.bcp.workshop.auth.AuthCorrectionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.313 s -- in com.bcp.workshop.auth.AuthResourceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 s -- in com.bcp.workshop.auth.PersistenceCharacterizationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+=== h02-unit-before.log ===
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[8,19] cannot find symbol
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[8,47] cannot find symbol
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[23,64] cannot find symbol
+[ERROR] BUILD FAILURE
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[8,19] cannot find symbol
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[8,47] cannot find symbol
+[ERROR] /C:/Users/Usuario/Documents/T60018-andres-koga/reqflow-workspace/workshop-auth-backend/src/test/java/com/bcp/workshop/auth/PasswordHasherTest.java:[23,64] cannot find symbol
+=== h02-after.log ===
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.073 s -- in com.bcp.workshop.auth.AuthCorrectionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.438 s -- in com.bcp.workshop.auth.AuthResourceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.739 s -- in com.bcp.workshop.auth.PasswordHasherTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.691 s -- in com.bcp.workshop.auth.PasswordMigrationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.667 s -- in com.bcp.workshop.auth.PersistenceCharacterizationTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+=== h03-h04-after.log ===
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.533 s -- in com.bcp.workshop.auth.AuthCorrectionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s -- in com.bcp.workshop.auth.AuthResourceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s -- in com.bcp.workshop.auth.TokenCharacterizationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.bcp.workshop.auth.TokenServiceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+=== h05-h07-before.log ===
+[ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.266 s <<< FAILURE! -- in com.bcp.workshop.auth.ErrorHandlingTest
+org.opentest4j.AssertionFailedError: expected: <401> but was: <500>
+org.opentest4j.AssertionFailedError: expected: <LoginResponse> but was: <HashMap>
+[ERROR]   ErrorHandlingTest.persistenceFailureRemainsAnObservableUnauthorizedResponse:26 expected: <401> but was: <500>
+[ERROR]   ErrorHandlingTest.successUsesAnExplicitOutputDto:48 expected: <LoginResponse> but was: <HashMap>
+[ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0
+[ERROR] BUILD FAILURE
+=== h06-characterization-before.log ===
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.549 s -- in com.bcp.workshop.auth.AuthCharacterizationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 s -- in com.bcp.workshop.auth.AuthResourceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.230 s -- in com.bcp.workshop.auth.CorsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in com.bcp.workshop.auth.ErrorHandlingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.bcp.workshop.auth.UserResponseTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+=== h06-correction-before.log ===
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.156 s <<< FAILURE! -- in com.bcp.workshop.auth.DependencyPolicyTest
+org.opentest4j.AssertionFailedError: expected: <3.27.6> but was: <3.27.4>
+org.opentest4j.AssertionFailedError: expected: <1.15.0> but was: <1.9>
+[ERROR]   DependencyPolicyTest.resolvesApprovedCommonsTextSecurityUpgrade:15 expected: <1.15.0> but was: <1.9>
+[ERROR]   DependencyPolicyTest.resolvesApprovedQuarkusLtsSecurityUpgrade:26 expected: <3.27.6> but was: <3.27.4>
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0
+[ERROR] BUILD FAILURE
