@@ -19,6 +19,21 @@ Credenciales locales:
 - `student` / `Workshop123!`
 - `trainer` / `Trainer123!`
 
+## Configuración de tokens
+
+- `AUTH_TOKEN_SECRET` (obligatoria): secreto de firma HMAC. No tiene valor por defecto. Si falta o está vacía, `POST /auth/login` responde 500 y no emite token.
+- `auth.token.ttl-seconds` (por defecto `3600`): duración del token; alimenta `exp` y `expiresIn`.
+- `auth.clients.allowed` (por defecto `angular-workshop`): lista de valores permitidos para `client`. Un `client` ausente usa `angular-workshop`; uno no permitido responde 400.
+
+```bash
+# Linux / macOS
+export AUTH_TOKEN_SECRET="<valor-largo-y-aleatorio>"
+# Windows PowerShell
+$env:AUTH_TOKEN_SECRET = "<valor-largo-y-aleatorio>"
+```
+
+**BREAKING:** los tokens emitidos por la versión anterior (Base64 sin firma) son rechazados. Los clientes deben iniciar sesión de nuevo tras el despliegue. La fecha de corte está pendiente de confirmar.
+
 ## Endpoints
 
 - `POST /auth/login`

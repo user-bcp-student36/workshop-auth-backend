@@ -53,6 +53,10 @@ El sistema SHALL validar el campo `client` de la solicitud y reflejarlo en el cl
 - **WHEN** el `client` enviado no esta en la lista de clientes permitidos
 - **THEN** la respuesta es 400 con un `message` que identifica el campo `client`
 
+#### Scenario: Client ausente usa el valor por defecto
+- **WHEN** el login es exitoso y la solicitud no incluye `client`
+- **THEN** el claim `client` del token es `angular-workshop`
+
 ### Requirement: Forma del error interno
 El sistema SHALL responder 500 con `{"message": ..., "exception": ...}` ante errores no controlados, sin cambiar la forma de ese cuerpo.
 

@@ -40,6 +40,10 @@
             <artifactId>quarkus-smallrye-health</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-jwt</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.50.3.0</version>
@@ -76,6 +80,9 @@
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                     </systemPropertyVariables>
+                    <environmentVariables>
+                        <AUTH_TOKEN_SECRET>workshop-test-only-secret-0123456789abcdefghij</AUTH_TOKEN_SECRET>
+                    </environmentVariables>
                 </configuration>
             </plugin>
             <plugin>

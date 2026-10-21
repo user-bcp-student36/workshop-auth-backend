@@ -25,7 +25,7 @@ Base URL local: `http://127.0.0.1:8080` (ver `quarkus.http.host` en `application
 |---|---|---|---|
 | `username` | string | Sí | No puede ser vacío ni solo espacios. |
 | `password` | string | Sí | No puede ser vacío ni solo espacios. |
-| `client` | string | No | Se deserializa (`LoginRequest.client`) pero hoy no se usa. |
+| `client` | string | No | Si falta se usa `angular-workshop`. Si viene y no está en `auth.clients.allowed`, responde 400. Se refleja en el claim `client` del token. |
 
 Campos desconocidos se ignoran (`quarkus.jackson.fail-on-unknown-properties=false`).
 
@@ -37,6 +37,7 @@ Campos desconocidos se ignoran (`quarkus.jackson.fail-on-unknown-properties=fals
 | 400 | Cuerpo nulo | `{"message": "Request is null"}` |
 | 400 | Falta `username` | `{"message": "Username is required"}` |
 | 400 | Falta `password` | `{"message": "Password is required"}` |
+| 400 | `client` no permitido (tras autenticar) | `{"message": "Invalid client"}` |
 | 401 | Usuario o contraseña incorrectos | `{"message": "Invalid user <username> or password"}` |
 | 500 | Error no controlado | `{"message": "<detalle>", "exception": "<clase>"}` |
 

@@ -45,6 +45,7 @@ El sistema SHALL obtener el secreto de firma de la variable de entorno `AUTH_TOK
 #### Scenario: Sin variable de entorno no se emiten tokens
 - **WHEN** `AUTH_TOKEN_SECRET` no esta definida y se solicita un login valido
 - **THEN** el sistema no devuelve un token y responde con un error de configuracion
+- **AND** la respuesta es 500 con los campos `message` y `exception`, sin el campo `token`
 
 #### Scenario: Secreto configurado permite emitir tokens
 - **WHEN** `AUTH_TOKEN_SECRET` esta definida con un valor no vacio y se solicita un login valido
